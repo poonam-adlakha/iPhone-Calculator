@@ -22,7 +22,10 @@ Array.from(buttons).forEach((button) => {
         else if (event.target.innerHTML == '±'){
                
         }
-        
+
+        else if (event.target.innerHTML == "+") {
+            
+        }
         
         else {
             result = result + event.target.innerHTML;
