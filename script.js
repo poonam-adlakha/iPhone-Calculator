@@ -10,12 +10,12 @@ function digitalClock() {                 //Shows Current Local Time
     document.body.appendChild(timing);
 }
 
-let result = "";
+let result = " ";
 let buttons = document.getElementsByTagName('button');
 Array.from(buttons).forEach((button) => {
-    button.addEventListener('click', (event) {
+    button.addEventListener('click', (event) => {
         result = result + event.target.innerHTML;
-        document.querySelector(screen).value = result;
+        document.querySelector('input').value = result;
     }
     )
-}
+})

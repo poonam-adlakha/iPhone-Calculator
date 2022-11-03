@@ -156,12 +156,14 @@ button {
     background: var(--sideButtons);
 }
 
-#screen {
+.input {
     top: 22%;
-    left: 80%;
+    left: 5%;
     position: relative;
     color: var(--result);
-    font-size: 45px;
+    width: 14em;
+    background: var(--iPhone);
+    flex-wrap:wrap;
 }
 
 #volume {
