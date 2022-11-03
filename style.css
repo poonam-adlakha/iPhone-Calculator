@@ -156,7 +156,7 @@ button {
     background: var(--sideButtons);
 }
 
-.input {
+#screen {
     top: 22%;
     left: 5%;
     position: relative;
