@@ -11,20 +11,22 @@ function digitalClock() {                 //Shows Current Local Time
 }
 
 let result = " ";
+let sum = 0;
 let buttons = document.getElementsByTagName('button');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (event) => {
-        if(event.target.innerHTML == 'AC') {
+        let buttonClick = event.target.innerHTML;
+        if(buttonClick == 'AC') {
             result = " ";
             document.querySelector('input').value = result;
         } 
 
-        else if (event.target.innerHTML == '±'){
+        else if (buttonClick == '±'){
                
         }
 
-        else if (event.target.innerHTML == "+") {
-            
+        else if (buttonClick == "+") {
+            calSum();
         }
         
         else {
@@ -34,3 +36,7 @@ Array.from(buttons).forEach((button) => {
     }
     )
 })
+
+function calSum {
+    let valueOne = document.getElementById()
+}
