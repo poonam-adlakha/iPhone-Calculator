@@ -2,11 +2,15 @@ function digitalClock() {                 //Shows Current Local Time
     var timing = document.getElementById("timer");
     let cont = document.getElementById('container');
     var localTime = new Date();
-    var hours = localTime.getHours();
-    var min = localTime.getMinutes();
+    var hours = localTime.getHours().toString();
+    var min = localTime.getMinutes().toString();
     min = min < 10 ? "0" + min : min;
     var timerNow = hours + ":" + min;
-    timing.innerText = timerNow;
+    setInterval(timerShow, 1000);
+    function timerShow() {
+        timing.innerText = timerNow;
+    }
+
     document.cont.appendChild(timing);
 }
 
@@ -26,7 +30,7 @@ Array.from(buttons).forEach((button) => {
         }
 
         else if (buttonClick == "+") {
-            calSum();
+            
         }
         
         else {
