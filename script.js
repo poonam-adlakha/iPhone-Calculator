@@ -1,18 +1,14 @@
-function digitalClock() {                 //Shows Current Local Time
-    var timing = document.getElementById("timer");
-    let cont = document.getElementById('container');
-    var localTime = new Date();
-    var hours = localTime.getHours().toString();
-    var min = localTime.getMinutes().toString();
-    min = min < 10 ? "0" + min : min;
-    var timerNow = hours + ":" + min;
-    setInterval(timerShow, 1000);
-    function timerShow() {
+const digitalClock = () => {
+        var timing = document.getElementById("timer");
+        var localTime = new Date();
+        var hours = localTime.getHours().toString();
+        var min = localTime.getMinutes().toString();
+        min = min < 10 ? "0" + min : min;
+        var timerNow = hours + ":" + min;
         timing.innerText = timerNow;
     }
-
-    document.cont.appendChild(timing);
-}
+    setInterval(digitalClock, 1000);
+    digitalClock();
 
 let result = " ";
 let sum = 0;
@@ -40,7 +36,3 @@ Array.from(buttons).forEach((button) => {
     }
     )
 })
-
-function calSum {
-    let valueOne = document.getElementById()
-}
