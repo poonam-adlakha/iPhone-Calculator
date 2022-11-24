@@ -1,3 +1,4 @@
+/* Working digital clock addition */
 const digitalClock = () => {
         var timing = document.getElementById("timer");
         var localTime = new Date();
@@ -10,6 +11,7 @@ const digitalClock = () => {
     setInterval(digitalClock, 1000);
     digitalClock();
 
+/* Calculations in Calculator*/
 let result = " ";
 let sum = 0;
 let buttons = document.getElementsByTagName('button');
