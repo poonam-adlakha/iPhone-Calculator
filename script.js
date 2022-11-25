@@ -24,7 +24,7 @@ Array.from(buttons).forEach((button) => {
         } 
 
         else if (buttonClick == '±'){
-               
+               document.querySelector('input').value = -result;
         }
 
         else if (buttonClick == "+") {
