@@ -15,16 +15,27 @@ const digitalClock = () => {
 let result = " ";
 let sum = 0;
 let buttons = document.getElementsByTagName('button');
+let screenResult = document.getElementById('screen');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (event) => {
+        console.log(screenResult.value);
         let buttonClick = event.target.innerHTML;
         if(buttonClick == 'AC') {
-            result = " ";
+            result = "0";
             document.querySelector('input').value = result;
         } 
 
         else if (buttonClick == '±'){
-               document.querySelector('input').value = -result;
+               if (result = -result) {
+                document.querySelector('input').value = result;
+               }
+
+        }
+
+        // Zero should not be added at first
+
+        else if (buttonClick == "0" && screenResult.value == "0") {
+                screenResult.value = "0";   
         }
 
         else if (buttonClick == "+") {
@@ -32,6 +43,9 @@ Array.from(buttons).forEach((button) => {
         }
         
         else {
+            if (screenResult.value == "0") {
+                result = "";
+            }
             result = result + event.target.innerHTML;
             document.querySelector('input').value = result;
         }
