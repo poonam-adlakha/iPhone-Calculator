@@ -20,11 +20,14 @@ Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (event) => {
         console.log(screenResult.value);
         let buttonClick = event.target.innerHTML;
+
+        // Clear with AC button
         if(buttonClick == 'AC') {
             result = "0";
             document.querySelector('input').value = result;
         } 
-
+        // Sign change operation
+        
         else if (buttonClick == '±'){
                if (result = -result) {
                 document.querySelector('input').value = result;
