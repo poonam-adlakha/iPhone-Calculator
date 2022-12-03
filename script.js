@@ -18,8 +18,13 @@ let buttons = document.getElementsByTagName('button');
 let screenResult = document.getElementById('screen');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (event) => {
-        console.log(screenResult.value);
         let buttonClick = event.target.innerHTML;
+
+        if (
+            action === 'plus' || action === 'minus' || action === 'multiple' || action === 'divide' || action === 'percentage'
+        ) {
+            console.log("Operators");
+        }
 
         // Clear with AC button
         if(buttonClick == 'AC') {
@@ -27,7 +32,7 @@ Array.from(buttons).forEach((button) => {
             document.querySelector('input').value = result;
         } 
         // Sign change operation
-        
+
         else if (buttonClick == '±'){
                if (result = -result) {
                 document.querySelector('input').value = result;
