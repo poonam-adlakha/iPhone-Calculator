@@ -17,15 +17,20 @@ let sum = 0;
 let buttons = document.getElementsByTagName('button');
 let screenResult = document.getElementById('screen');
 Array.from(buttons).forEach((button) => {
-    button.addEventListener('click', (event) => {
-        let buttonClick = event.target.innerHTML;
-
+    button.addEventListener('click', (e) => {
+        let buttonClick = e.target.innerHTML;
+        const allKeys = e.target;
+        const action = allKeys.dataset.action;
+        const keyText = allKeys.keyText;
         if (
-            action === 'plus' || action === 'minus' || action === 'multiple' || action === 'divide' || action === 'percentage'
-        ) {
-            console.log("Operators");
-        }
-
+            action === 'plus' ||
+            action === 'minus' ||
+            action === 'multiple' ||
+            action === 'divide' ||
+            action === 'percentage'
+          ) {
+            allKeys.classlist.add('calculations')
+          }
         // Clear with AC button
         if(buttonClick == 'AC') {
             result = "0";
@@ -44,10 +49,6 @@ Array.from(buttons).forEach((button) => {
 
         else if (buttonClick == "0" && screenResult.value == "0") {
                 screenResult.value = "0";   
-        }
-
-        else if (buttonClick == "+") {
-            
         }
         
         else {
