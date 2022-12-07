@@ -29,7 +29,8 @@ Array.from(buttons).forEach((button) => {
             action === 'divide' ||
             action === 'percentage'
           ) {
-            allKeys.classlist.add('calculations')
+            allKeys.classlist.add('calculations');
+            buttonClick.dataset.previousKeyType = 'operator';
           }
         // Clear with AC button
         if(buttonClick == 'AC') {
