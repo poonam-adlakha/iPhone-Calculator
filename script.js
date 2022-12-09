@@ -21,7 +21,7 @@ Array.from(buttons).forEach((button) => {
         let buttonClick = e.target.innerHTML;
         const allKeys = e.target;
         const action = allKeys.dataset.action;
-        const keyText = allKeys.keyText;
+        const keyText = allKeys.value;
         if (
             action === 'plus' ||
             action === 'minus' ||
@@ -31,6 +31,12 @@ Array.from(buttons).forEach((button) => {
           ) {
             allKeys.classlist.add('calculations');
             buttonClick.dataset.previousKeyType = 'operator';
+            const previousKeyType = buttonClick.dataset.previousKeyType;
+            if (!action) {
+                if (screenResult.value === '0' ) {
+                    
+                }
+            }
           }
         // Clear with AC button
         if(buttonClick == 'AC') {
