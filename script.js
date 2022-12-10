@@ -27,19 +27,26 @@ Array.from(buttons).forEach((button) => {
             action === 'minus' ||
             action === 'multiple' ||
             action === 'divide' ||
-            action === 'percentage'
+            action === 'percentage' ||
+            action === 'equals'
           ) {
-            allKeys.classlist.add('calculations');
-            buttonClick.dataset.previousKeyType = 'operator';
-            const previousKeyType = buttonClick.dataset.previousKeyType;
-            if (!action) {
-                if (screenResult.value === '0' ) {
-                    
-                }
-            }
+               if (action == 'plus') {
+                sum = parseFloat(result);
+                console.log("printing sum " + sum);
+                result = "0";
+                document.querySelector('input').value = result;
+               }
+
+               if (action === 'equals') {
+                 sum += parseFloat(result);
+                 result = sum;
+                 document.querySelector('input').value = result;   
+               }
+               
           }
         // Clear with AC button
-        if(buttonClick == 'AC') {
+        else if(buttonClick == 'AC') {
+            sum = 0;
             result = "0";
             document.querySelector('input').value = result;
         } 
